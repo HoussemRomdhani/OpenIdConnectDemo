@@ -1,0 +1,12 @@
+<div class=" mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Profile</h2>
+            <p class="text-muted">Name: <strong>{{ (claims$ | async)?.userData.name}}</strong> </p>
+            <p class="text-muted">Given Name:  <strong>{{ (claims$ | async)?.userData.given_name}}</strong></p>
+            <p class="text-muted">Family Name:  <strong>{{ (claims$ | async)?.userData.family_name}}</strong></p>
+            <p class="card-text">User ID: <strong>{{ (claims$ | async)?.userData.sub}}</strong></p>
+            <a href="{{ (claims$ | async)?.userData.website}}" class="btn btn-primary" target="_blank">Visit Website</a>
+        </div>
+    </div>
+</div>

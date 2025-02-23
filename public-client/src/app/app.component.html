@@ -1,0 +1,29 @@
+<header>
+      <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand" (click)="goToHome()">Book Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                      <button *ngIf="(isAuthenticated$ | async)" class="nav-link" (click)="goToBooks()">Books</button> 
+                    </li>
+                </ul>
+            </div>
+            <button *ngIf="!(isAuthenticated$ | async)" class="nav-link flex-end" (click)="login()">Sign in</button>
+            <div class="dropdown" *ngIf="isAuthenticated$ | async">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ (name$ | async)}}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" (click)="goToProfile()">Profile</a></li>
+                <li *ngIf="isAuthenticated$ | async"><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<router-outlet></router-outlet>
