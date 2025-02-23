@@ -1,6 +1,6 @@
 # OpenIdConnectDemo
 
-This is a demo project to show how to use OpenIdConnect with IdentityServer4 and ASP.NET Core and Angular.
+This is a demo project to show how to use OpenIdConnect with Duende IdentityServer and ASP.NET Core and Angular.
 
 ## How to run the confidential client
 	1. Run the IDP
