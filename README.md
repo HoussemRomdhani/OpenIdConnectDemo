@@ -12,7 +12,7 @@ This is a demo project to show how to use OpenIdConnect with Duende IdentityServ
 	2. Run the Api
 	3. Run the angular client
 
-## Authorization Code Grant flow with PKCE
+## Authorization Code flow with PKCE
 
 
 
